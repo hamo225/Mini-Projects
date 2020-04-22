@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: thistle;
+        }
+
+        #btnSection {
+            margin: 0 auto;
+            width: 200px;
+            margin-top: 20%;
+        }
+
+        #btn {
+            margin: 0 auto;
+            border-radius: 20px;
+            font-size: 20px;
+            font-family: cursive;
+            height: 100%;
+            margin-top: 25%;
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div id="btnSection"><button id="btn">Click Me</button></div>
+
+
+    <script>
+        //writing a function to get a random colour. Function is written alone.
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        //what happens when we click the button
+        document.getElementById("btn").onclick = function () {
+
+            document.body.style.backgroundColor = getRandomColor();
+
+        }
+    </script>
+</body>
+
+</html>
