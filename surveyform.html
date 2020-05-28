@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0px;
+            background-image: url(https://images.pexels.com/photos/547114/pexels-photo-547114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        #main {
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 0 auto;
+            margin-bottom: 100px;
+            width: fit-content;
+            padding: 40px 40px;
+
+        }
+
+        #header {
+            text-align: center;
+        }
+
+        input {
+            border: solid;
+            border-width: 1px;
+            border-color: gray;
+            margin-bottom: 20px;
+            margin-top: 2px;
+            border-radius: 20px;
+            height: 20px;
+            padding-left: 10px;
+
+
+        }
+
+        label {
+            font-size: 14px;
+
+        }
+
+        #submit {
+            font-size: 20px;
+            width: 100%;
+            background-color: cornflowerblue;
+            border: none;
+            margin-top: 30px;
+            border-radius: 20px;
+            color: white;
+        }
+
+        #submit:hover {
+            color: white;
+            background-color: green;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+
+    <header id="header">
+        <div>
+            <h1 id="title">Information Form: Book Box Subcripton</h1>
+            <p id="description">Answering a few of our questions will help get to know you better.</p>
+        </div>
+
+    </header>
+
+
+    <section id="main">
+        <form action="" id="survey-form">
+
+            <label for="name" id="name-label">First Name</label>
+            <input type="text" name="name" id="name" required="required" placeholder="enter name" autofocus>
+
+            <div>
+                <label for="name" id="lastName">Last Name</label>
+                <input type="text" name="name" id="name" required="required" placeholder="enter last name">
+            </div>
+            <div>
+                <label for="email" id="email-label">Email</label>
+                <input type="email" name="email" id="email" required="required" placeholder="enter email">
+            </div>
+            <div>
+                <label for="age" id="age">Age (Optional)</label>
+                <input type="number" name="age" id="age" min="1">
+            </div>
+            <div>
+                <label for="number" id="number-label">Phone Number</label>
+                <input type="number" name="number" id="number" placeholder="enter number" required min="10" max="1000">
+            </div>
+
+            <p>On average, how many books a month do you read?
+
+                <div>
+                    <select name="" id="dropdown">
+                        <option disabled selected value=>---options---</option>
+                        <option value=>1</option>
+                        <option value=>2</option>
+                        <option value=>3</option>
+                    </select>
+            </p>
+            </div>
+
+            <p>What is you favourite Genre?
+                <div>
+                    <select name="genres" id="dropdown">
+                        <option disabled selected value="---options---">---options---</option>
+                        <option value="crime">Crime</option>
+                        <option value="Business">Business</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Sci-Fi">Sci-Fi</option>
+                    </select>
+            </p>
+            </div>
+
+
+            <p>On average, how many books a month do you read?
+
+                <div>
+                    <input type="radio" name="books" id="none" value="None">
+                    <label for="none">none</label><br>
+
+                    <input type="radio" name="books" id="one" value="One">
+                    <label for="one">one</label><br>
+
+                    <input type="radio" name="books" id="two" value="Two">
+                    <label for="two">two</label><br>
+
+                    <input type="radio" name="books" id="three" value="Three">
+                    <label for="three">three</label><br>
+
+                    <input type="radio" name="books" id="morethanthree" value="morethanthree">
+                    <label for="morethanthree">more than 3</label><br>
+
+
+
+
+                </div>
+                <p>On average, how many books a month do you read?
+
+                    <div>
+                        <input type="checkbox" name="One" id="One" value="One">
+                        <label for="One">One</label><br>
+                        <input type="checkbox" name="Two" id="Two" value="Two">
+                        <label for="Two">Two</label><br>
+                        <input type="checkbox" name="Three" id="Three" value="Three">
+                        <label for="Three">Three</label><br>
+                    </div>
+                </p>
+
+                <div>
+                    <p>Anything else we shoud know to help us with your book choice?</p>
+                    <textarea name="message" id="anythingElse" cols="50" rows="5"></textarea>
+                </div>
+                <button type="submit" id="submit" value="submit" onclick="alert('Thank You')">Submit</button>
+                <input type="reset">
+        </form>
+    </section>
+</body>
+
+</html>
