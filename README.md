@@ -6,4 +6,13 @@ This Repo initally was going to be a one repo-one mini project but now thinking 
 
 #3 Reaction Test Game - from a Udemy course. 
 
+#4 Product Landing Page for a Bakery - FreeCodeCamp 
+
+#5 Tribute Page to George Costanza - FreeCodeCamp 
+
+#6 Generic Survery form for a book supscription business - FreeCodeCamp 
+
+#7 JavaScript features - number guessing game, tip calculator, sign in & login forms. 
+
+
  
