@@ -15,4 +15,8 @@ This Repo initally was going to be a one repo-one mini project but now thinking 
 #7 JavaScript features - number guessing game, tip calculator, sign in & login forms. 
 
 #8 Countdown to a trip - Simple Countdown Timer
+
+#9 2 player Dice Game - working with JS addEventListeners, getElementById, querySelectors,  DOM manipulation and creating DRY code.
+
+
  
