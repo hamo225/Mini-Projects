@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="">
+        body{
+            width: 100%;
+            height: auto;
+            
+        }
+    
+        #firstSection{
+            width: 50%;
+            height: 100%;
+            margin: 0 auto;
+            margin-top: 50px;
+            background-color: brown;
+            border-style: solid;
+            border-radius: 25px;
+       
+        }
+
+        #guess{
+            margin-left: 35%;
+        }
+
+        #text{
+            font-size: 40px;
+            text-align: center;
+            color: white;
+        }
+
+        #secondSection{
+            width: 35%;
+            height: 100%;
+            margin: 0 auto;
+            margin-top: 80px;
+            background-color:cadetblue;
+            border-style: solid;
+            border-radius: 25px;
+            
+        }
+
+        h1{
+            color:white;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            font-size: 150%;
+
+        }
+
+        #tipSection{
+            padding-left: 50px;
+            padding-bottom: 50px;
+            
+        }
+
+        #calculation{
+            display: none;
+        }
+
+        .calculations{
+            padding-left: 10px;
+        }
+
+        #thirdSection{
+            width: 80%;
+            height: 500px;
+            margin: 0 auto;
+            margin-top: 80px;
+            margin-bottom: 100px;
+            background-color:cadetblue;
+            border-style: solid;
+            border-radius: 25px;
+        
+        }
+
+        #signUpSection{
+            float: left;
+            width: 20%;
+            height: 300px;
+            margin-left: 200px;
+            background-color:cadetblue;
+            border-style: solid;
+            border-radius: 25px;
+            background-color: thistle;
+        }
+
+        #logInSection{
+            float: right;
+            width: 20%;
+            height: 300px;
+            margin-right: 200px;
+            background-color:cadetblue;
+            border-style: solid;
+            border-radius: 25px;
+            background-color: thistle;
+        }
+
+        .inputBoxes{
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="firstSection">
+        <h1>I am a double digit number, Less than 20. What am I?</h1>
+        <input type="text" id="guess">
+        <button type="submit" id="btn"> GUESS </button>
+
+        <p id="text"></p>
+    </div>
+
+    <div id="secondSection">
+        <h1>Tip Calculator</h1>
+        <div id="tipSection">
+            <p>Bill Total
+                <input type="number" id="billTotal">
+            </p>
+
+            <p>How much do you want to tip?</p>
+            <select name="" id="tipChoice">
+                <option disabled selected value="0">--Choose and Option--</option>
+                <option value="0.1">10% Tip</option>
+                <option value="0.2">20% Tip</option>
+                <option value="0.3">30% Tip</option>
+                <option value="0.5">50% Tip!</option>
+
+            </select>
+            <p>How many people are sharing the bill?<input type="number" id="people"></p>
+            <Button id="tipBtn">Calculate Tip</Button>
+
+            <div id="calculation">
+                <p>Total Tip:<span id="totalTip" class="calculations"></span></p>
+                </p>
+                <p>Tip per person:<span id="unitTip" class="calculations"></span></p>
+                <p>Total Bill (including Tip):<span id="totalBill" class="calculations"></span></p>
+                <p>Total per person:<span id="unitTotal" class="calculations"></span></p>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="thirdSection">
+        <h1>Straight forward sign up & then Log In</h1>
+
+        <div id="signUpSection">
+            <form action="" class="inputBoxes" onsubmit="return false">
+                <label for="Username">Username:</label>
+                <input type="text" name="inputUsername" id="inputUsername">
+                <label for="password">Password:</label>
+                <input type="password" name="inputPassword" id="inputPassword">
+                <input type="submit" name="submit" value="Sign Up" id="signUpSubmitBtn">
+            </form>
+        </div>
+
+        <div id="logInSection">
+            <form action="" class="inputBoxes" onsubmit="return false">
+                <label for="Username">Username:</label>
+                <input type="text" name="Username" id="logInUsername">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="logInPassword">
+                <input type="submit" name="submit" value="Log In" id="logInSubmitBtn">
+            </form>
+
+        </div>
+
+
+
+    </div>
+
+    <script>
+        //this is how to play out a function with an input value as a parameter and to get an output.
+        document.getElementById("btn").onclick = function takeAGuess(num) {
+            num = document.getElementById("guess").value;
+
+            if (num > 10 && num < 15 && num == 12) {
+                document.getElementById("text").innerHTML = "Congrats!";
+            } else {
+                document.getElementById("text").innerHTML = "Sorry. Try again loser!";
+            }
+        }
+
+        //When the calculate button is pressed the function starts - is it better to create the function first?
+        //This is the JS for the Tip Calculator
+        document.getElementById("tipBtn").onclick = function calculateTip() {
+            var billTotal = document.getElementById("billTotal").value;
+            var tipChoice = document.getElementById("tipChoice").value;
+            var numberOfPeople = document.getElementById("people").value;
+
+            //calculate total tip based on data
+            var totalTip = (billTotal * tipChoice);
+            totalTip = Math.round(totalTip * 100) / 100; //round to 2 decimal places
+            totalTip = totalTip.toFixed(2); //only 2 digits after decimal place
+
+            //calculate tip divided over the number of people
+            var unitTip = (totalTip / numberOfPeople);
+            unitTip = Math.round(unitTip * 100) / 100; //round to 2 decimal places
+            unitTip = unitTip.toFixed(2); //only 2 digits after decimal place
+            document.getElementById("unitTip").innerHTML = '\u20AC' + unitTip;
+
+            //calculate the total to be paid
+            //use parsInt to add two numbers together that are tied up in variables
+            var totalBill = parseInt(totalTip) + parseInt(billTotal);
+            totalBill = Math.round(totalBill * 100) / 100; //round to 2 decimal places
+            totalBill = totalBill.toFixed(2); //only 2 digits after decimal place
+            document.getElementById("totalBill").innerHTML = '\u20AC' + totalBill;
+
+            //calcuate total to be paid divided over the number of people
+            var unitTotal = (totalBill / numberOfPeople);
+            unitTotal = Math.round(unitTotal * 100) / 100; //round to 2 decimal places
+            unitTotal = unitTotal.toFixed(2); //only 2 digits after decimal place
+            document.getElementById("unitTotal").innerHTML = '\u20AC' + unitTotal;
+
+            //display the calculation section
+            document.getElementById("calculation").style.display = "block";
+            document.getElementById("totalTip").innerHTML = '\u20AC' + totalTip;
+
+        }
+
+        //This is the JS for the sign up and log in features
+        //define the variables first
+        usernames = [];
+        passwords = [];
+
+        document.getElementById("signUpSubmitBtn").onclick = function addTo() {
+            usernames.push(document.getElementById("inputUsername").value);
+            passwords.push(document.getElementById("inputPassword").value);
+            console.log(usernames);
+            console.log(passwords);
+        }
+
+        document.getElementById("logInSubmitBtn").onclick = function logIn() {
+
+            if (document.getElementById("logInUsername").value == usernames && document.getElementById(
+                    "logInPassword").value == passwords) {
+                console.log("Well Done");
+            } else {
+                console.log("Keep Trying")
+            }
+
+        }
+
+        //how do i code it that - 1 - loginusername needs to match a element in the array. 
+        //2- loginpassword needs to match a element in the array.
+        // 3- only gives well done if password associated to that log in.
+        // how to anchor a password to a username?
+    </script>
+</body>
+
+</html>

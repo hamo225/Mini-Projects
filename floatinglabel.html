@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: inherit;
+        }
+
+        html {
+            box-sizing: border-box;
+            font-size: 62.5%;
+        }
+
+        body {
+            font-size: 1.6rem;
+            font-family: sans-serif;
+        }
+
+        main {
+            max-width: 51.2rem;
+            margin: 5rem auto;
+            border-top: 0.4rem solid green;
+        }
+
+        form {
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        input {
+            border: none;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 1.6rem;
+            border-bottom: 0.2rem solid #bdbdbd;
+            outline: none;
+        }
+
+        label {
+            padding-left: 1rem;
+            color: #bdbdbd;
+            transform: translateY(4.8rem);
+            transform-origin: left top;
+            cursor: text;
+        }
+
+        button {
+            font-weight: bold;
+            border: none;
+            padding: 1rem 0;
+            margin: 4rem 0;
+            width: 100%;
+            color: #fafafa;
+            background-color: green;
+            cursor: pointer;
+        }
+
+        input,
+        label {
+            transition: 0.2s ease-in-out;
+        }
+
+        input:focus,
+        input:not(:placeholder-shown) {
+            border-bottom: 0.2rem solid #212121;
+        }
+
+
+        input:focus~label,
+        input:not(:placeholder-shown)~label {
+            padding: 0;
+            color: #212121;
+            transform: translateY(2rem) scale(0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <form>
+            <div>
+                <input id="email" type="email" placeholder=" " />
+                <label for="email">Email</label>
+            </div>
+            <div>
+                <input id="password" type="password" placeholder=" " />
+                <label for="password">Password</label>
+            </div>
+            <button>Login</button>
+        </form>
+    </main>
+
+
+    <form action="">
+        <div>
+            <input type="text" name="" id="">
+            <label for=""></label>
+        </div>
+
+        <div>
+            <input type="text" name="" id="">
+            <label for=""></label>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>
