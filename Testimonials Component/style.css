@@ -40,7 +40,7 @@ White: hsl(0, 0%, 100%)
     --neutral-color-white: hsl(0, 0%, 100%);
 
     /* Typography */
-    --font-size-small: 13px;
+    --font-size-small: 12px;
     --font-size: 15px;
     --font-size-medium: 15px;
     --font-size-large: 40px;
@@ -87,7 +87,18 @@ html {
     display: flex;
     padding: 0 7rem;
     justify-content: space-between;
-    color: var(--neutral-color-white);
+    color: var(--neutral-color-light);
+    align-items: center;
+}
+
+.review:first-child {
+    margin-top: -0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.review:last-child {
+    margin-top: 2rem;
+    margin-bottom: -.2rem;
 }
 
 
@@ -152,18 +163,42 @@ html {
 /* Bottom Section */
 .reviews {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     font-size: var(--font-size-small);
+    font-weight: var(--font-weight-1);
+    line-height: 1.4rem;
 
 }
 
 .review {
-    width: 400px;
-    padding: 2rem 1rem;
+    width: 360px;
+    padding: 2rem 3rem;
     background-color: var(--primary-color-purple);
     margin: .5rem;
+    border-radius: 10px;
 }
 
 .review__header {
     display: flex;
+    justify-content: start;
+    margin-bottom: 1rem;
+}
+
+.header__top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+
+}
+
+.header__verification {
+    color: var(--primary-color-pink);
+}
+
+.bottomSection img {
+    border-radius: 50%;
+    width: 20%;
+
 }
