@@ -135,7 +135,7 @@ html {
 
 .rating {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: var(--neutral-color-light);
     width: 450px;
     padding: 1rem 2.5rem;
@@ -151,13 +151,10 @@ html {
     margin-left: 4rem;
 }
 
-.rating__stars {}
-
-
 .rating__text {
     color: var(--primary-color-purple);
     font-weight: var(--font-weight-3);
-    font-size: var(--font-size);
+    font-size: var(--font-size-small);
 }
 
 /* Bottom Section */
