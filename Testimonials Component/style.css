@@ -43,6 +43,7 @@ White: hsl(0, 0%, 100%)
     --font-size-small: 12px;
     --font-size: 15px;
     --font-size-medium: 15px;
+    --font-size-mobile-medium: 38px;
     --font-size-large: 40px;
     --font-family: 'Spartan', sans-serif;
     --font-weight-1: 400;
@@ -59,6 +60,7 @@ White: hsl(0, 0%, 100%)
 
 html {
     font-family: var(--font-family);
+
 
 }
 
@@ -197,5 +199,89 @@ html {
 .bottomSection img {
     border-radius: 50%;
     width: 20%;
+
+}
+
+
+@media only screen and (max-width: 415px) {
+
+    * {
+        box-sizing: unset;
+    }
+
+    .container {
+        justify-content: right;
+        background-image: url(/images/bg-pattern-top-desktop.svg);
+        background-position: top;
+    }
+
+    .topSection {
+        flex-direction: column;
+        padding: 0;
+        text-align: center;
+        justify-content: center;
+        margin-top: 5rem;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__title {
+        font-size: var(--font-size-mobile-medium);
+        padding: 0 2rem;
+    }
+
+    .header__description {
+        width: 350px;
+
+    }
+
+    .stars {
+        display: flex;
+        align-items: center;
+    }
+
+    .rating {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        width: 350px;
+    }
+
+    .rating__stars {
+        margin-bottom: 1rem;
+    }
+
+    .rating__text {
+        font-size: var(--font-size);
+    }
+
+    .rating:first-child {
+        margin-left: 0rem;
+    }
+
+    .rating:last-child {
+        margin-left: 0rem;
+    }
+
+    .bottomSection {
+        margin-bottom: 5rem;
+        margin-top: 1.5rem;
+        width: 390px;
+    }
+
+    .reviews {
+        flex-direction: column;
+        align-items: center;
+        font-size: var(--font-size);
+    }
+
+
+
+
+
 
 }
